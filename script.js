@@ -1,14 +1,13 @@
 // Write your JavaScript code here!
 
    window.addEventListener("load", function() {
-   let endpointURL = ()
-
-   window.addEventListener("load", function () {
+   let endpointURL = "https://handlers.education.launchcode.org/static/planets.json"
 
       fetch("https://handlers.education.launchcode.org/static/planets.json").then(function(response){
          response.json().then(function(json){
             const div = document.getElementById("missionTarget");
             const destination = Math.round(Math.random()*5)
+            const data = json[index]
 
             div.innerHTML =`
             <h2>Mission Destination</h2>
@@ -85,17 +84,8 @@
       event.preventDefault()
    }
 
+
+
 });
+
 });
-
-/*
-
-/* The list of shuttle requirements, the div with the id faultyItems, should be updated if something is not ready for launch. Using template literals, update the li elements pilotStatus and copilotStatus to include the pilot's name and the co-pilot's name.
-
-If the user submits a fuel level that is too low (less than 10,000 liters), change faultyItems to visible with an updated fuel status stating that there is not enough fuel for the journey. The text of the h2 element, launchStatus, should also change to "Shuttle not ready for launch" and the color should change to red.
-
-If the user submits a cargo mass that is too large (more than 10,000 kilograms), change the list to visible with an updated cargo status stating that there is too much mass for the shuttle to take off. The text of launchStatus should also change to "Shuttle not ready for launch" and the color should change to red.
-
-If the shuttle is ready to launch, change the text of launchStatus to green and display "Shuttle is ready for launch".
-
-*/
